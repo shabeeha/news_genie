@@ -1,6 +1,6 @@
-# 🗞️ NewsGenie — AI-Powered News & Information Assistant
+# 🗞️ NewsGenie - AI-Powered News & Information Assistant
 
-NewsGenie is a multi-agent AI chatbot that fetches real-time news, filters misinformation, and answers general questions — all in one unified Streamlit interface.
+NewsGenie is a multi-agent AI chatbot that fetches real-time news, filters misinformation, and answers general questions- all in one unified Streamlit interface.
 
 Built with **LangGraph**, **NewsAPI**, **SerpAPI**, and **OpenAI**.
 
@@ -25,16 +25,16 @@ NewsGenie uses a **5-agent LangGraph pipeline**. Each agent has one job and pass
 User Query
     │
     ▼
-classify_agent   — Is this news or a general question? What category?
+classify_agent   - Is this news or a general question? What category?
     │
-    ├── [news]    ──► news_agent      — Fetch from NewsAPI (falls back to SerpAPI)
-    └── [general] ──► general_agent   — SerpAPI web search
+    ├── [news]    ──► news_agent      - Fetch from NewsAPI (falls back to SerpAPI)
+    └── [general] ──► general_agent   - SerpAPI web search
                               │
                               ▼
-                      factcheck_agent  — LLM checks every result individually
+                      factcheck_agent  - LLM checks every result individually
                               │
                               ▼
-                       format_agent   — Composes the final answer
+                       format_agent   - Composes the final answer
                               │
                               ▼
                         Streamlit UI
@@ -56,15 +56,15 @@ classify_agent   — Is this news or a general question? What category?
 
 ```
 newsgenie/
-├── app.py            # Streamlit UI — chat interface and state flow diagram
-├── workflow.py       # LangGraph wiring — connects agents into a directed graph
+├── app.py            # Streamlit UI - chat interface and state flow diagram
+├── workflow.py       # LangGraph wiring - connects agents into a directed graph
 ├── agents.py         # All 5 agent functions + API helper utilities
 ├── state.py          # Shared state definition (TypedDict)
 ├── requirements.txt  # Python dependencies
 └── .env              # API keys 
 ```
 
-Each file has **one responsibility only** — the wiring, the logic, the UI, and the state are all kept separate.
+Each file has **one responsibility only** - the wiring, the logic, the UI, and the state are all kept separate.
 
 ---
 
